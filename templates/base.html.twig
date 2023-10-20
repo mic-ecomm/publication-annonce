@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			SymBNB -
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/app.css">
+
+	</head>
+	<body>
+
+		{% include 'shared/header.html.twig' %}
+
+		{% block body %}{% endblock %}
+
+		{% include 'shared/footer.html.twig' %}
+
+		<script src="/js/slim.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		{% block javascripts %}{% endblock %}
+	</body>
+</html>
