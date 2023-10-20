@@ -23,7 +23,7 @@ final class Version20230810054701 extends AbstractMigration
         $this->addSql('ALTER TABLE ad DROP FOREIGN KEY FK_77E0ED58F675F31B');
         $this->addSql('DROP INDEX IDX_77E0ED58F675F31B ON ad');
         $this->addSql('ALTER TABLE ad DROP author_id');
-        $this->addSql('ALTER TABLE user ADD email VARCHAR(255) NOT NULL');
+        //$this->addSql('ALTER TABLE user ADD email VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema): void
@@ -32,6 +32,6 @@ final class Version20230810054701 extends AbstractMigration
         $this->addSql('ALTER TABLE ad ADD author_id INT NOT NULL');
         $this->addSql('ALTER TABLE ad ADD CONSTRAINT FK_77E0ED58F675F31B FOREIGN KEY (author_id) REFERENCES user (id) ON UPDATE NO ACTION ON DELETE NO ACTION');
         $this->addSql('CREATE INDEX IDX_77E0ED58F675F31B ON ad (author_id)');
-        $this->addSql('ALTER TABLE user DROP email');
+        // $this->addSql('ALTER TABLE user DROP email');
     }
 }
